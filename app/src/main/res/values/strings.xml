@@ -1,3 +1,21 @@
 <resources>
-    <string name="app_name">DepressionBear</string>
+    <string name="app_name">Depression Bear</string>
+    <string name="navigation_drawer_open">Open Navigation Drawer</string>
+    <string name="navigation_drawer_close">Close Navigation Drawer</string>
+    <string name="agreement">This application will be used to detect Depression. A set of questions related to functional and cognitive areas will be provided. \n\nIn the end we will provide a score and personal recommend activities to help you reducing depression. </string>
+    <string name="Question1">1. Little interest or pleasure in doing things</string>
+    <string name="Question2">2. Feeling down, depressed or hopeless</string>
+    <string name="Question3">3. Trouble falling or staying asleep, or sleeping too much</string>
+    <string name="Question4">4. Feeling tired or having little energy</string>
+    <string name="Question5">5. Poor appetite or Over eating</string>
+    <string name="Question6">6. Feeling bad about yourself or that you are a failure or have let yourself or your family down</string>
+    <string name="Question7">7. Trouble concentrating on thing, such as reading the newspaper or watching television</string>
+    <string name="Question8">8. Moving or speaking so slowly that other people could have noticed?</string>
+    <string name="Question9">9. Thoughts that you would be better off dead or of hurting yourself in some way?</string>
+    <string name="Question10">10. Little interest or pleasure in doing things</string>
+    <string name="Question11">Little interest or pleasure in doing things</string>
+    <string name="Question12">Little interest or pleasure in doing things</string>
+    <string name="Question13">Little interest or pleasure in doing things</string>
+    <string name="Question14">Little interest or pleasure in doing things</string>
+    <string name="Question15">Little interest or pleasure in doing things</string>
 </resources>
