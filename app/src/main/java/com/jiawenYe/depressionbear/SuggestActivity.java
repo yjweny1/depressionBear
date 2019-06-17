@@ -1,10 +1,14 @@
 package com.jiawenYe.depressionbear;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,47 +17,78 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class SuggestActivity extends AppCompatActivity {
-    ListView listView;
-    String nTitle [] = {"Walk 40 mins", "Walk 40 mins", "Walk 40 mins", "Walk 40 mins", "Walk 40 mins", "Walk 40 mins", "Walk 40 mins" , "Walk 40 mins", "Walk 40 mins"};
-    String nDesc [] = {"Walk 40 mins", "Walk 40 mins", "Walk 40 mins", "Walk 40 mins", "Walk 40 mins", "Walk 40 mins", "Walk 40 mins", "Walk 40 mins", "Walk 40 mins"};
-    int img [] = {R.drawable.walk_1, R.drawable.walk_1, R.drawable.walk_1, R.drawable.walk_1, R.drawable.walk_1, R.drawable.walk_1, R.drawable.walk_1, R.drawable.walk_1, R.drawable.walk_1};
+
+    private static final String TAG = "SuggestActivity";
+
+    private ArrayList<String> mTitle = new ArrayList<>() ;
+    private ArrayList<String> mDesc = new ArrayList<>() ;
+    private ArrayList<String> mImageUrl = new ArrayList<>() ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_suggest);
+        Log.d(TAG, "onCreate: Started.");
 
-        listView = findViewById(R.id.listview);
-        MyAdapter myAdapter = new MyAdapter(this, nTitle, nDesc, img);
+        intiImageBitmaps();
 
     }
 
-    class MyAdapter extends ArrayAdapter<String> {
-        Context context;
-        String rTitle[];
-        String rDesc[];
-        int rImg[];
-        MyAdapter (Context c, String title[], String desc[], int imag[]){
-            super(c, R.layout.row, R.id.textview1, title);
-            this.context = c;
-            this.rTitle = title;
-            this.rDesc = desc;
-            this.rImg = imag;
-        }
+    private void intiImageBitmaps(){
+        Log.d(TAG, "intiImageBitmaps: preparing bitmaps");
+        mImageUrl.add("https://scontent.fakl2-1.fna.fbcdn.net/v/t1.15752-9/64468558_410298139698482_7448380701889527808_n.png?_nc_cat=110&_nc_ht=scontent.fakl2-1.fna&oh=1b08515d6f00fd0c52d7c04fce14985d&oe=5D8DD309");
+        mTitle.add("Walk 40 mins");
+        mDesc.add("Walk 40 mins");
 
-        @NonNull
-        @Override
-        public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-            LayoutInflater layoutInflater = (LayoutInflater)getApplicationContext().getSystemService(context.LAYOUT_INFLATER_SERVICE);
-            View row =  layoutInflater.inflate(R.layout.row, parent, false);
-            ImageView image = row.findViewById(R.id.imagelogo);
-            TextView myTitle = row.findViewById(R.id.textview1);
-            TextView myDesc = row.findViewById(R.id.textview2);
-            image.setImageResource(rImg[position]);
-            myTitle.setText(rTitle[position]);
-            myDesc.setText(rDesc[position]);
-            return row;
+        mImageUrl.add("https://scontent.fakl2-1.fna.fbcdn.net/v/t1.15752-9/64468558_410298139698482_7448380701889527808_n.png?_nc_cat=110&_nc_ht=scontent.fakl2-1.fna&oh=1b08515d6f00fd0c52d7c04fce14985d&oe=5D8DD309");
+        mTitle.add("Walk 40 mins");
+        mDesc.add("Walk 40 mins");
 
-        }
+        mImageUrl.add("https://scontent.fakl2-1.fna.fbcdn.net/v/t1.15752-9/64468558_410298139698482_7448380701889527808_n.png?_nc_cat=110&_nc_ht=scontent.fakl2-1.fna&oh=1b08515d6f00fd0c52d7c04fce14985d&oe=5D8DD309");
+        mTitle.add("Walk 40 mins");
+        mDesc.add("Walk 40 mins");
+
+        mImageUrl.add("https://scontent.fakl2-1.fna.fbcdn.net/v/t1.15752-9/64468558_410298139698482_7448380701889527808_n.png?_nc_cat=110&_nc_ht=scontent.fakl2-1.fna&oh=1b08515d6f00fd0c52d7c04fce14985d&oe=5D8DD309");
+        mTitle.add("Walk 40 mins");
+        mDesc.add("Walk 40 mins");
+
+        mImageUrl.add("https://scontent.fakl2-1.fna.fbcdn.net/v/t1.15752-9/64468558_410298139698482_7448380701889527808_n.png?_nc_cat=110&_nc_ht=scontent.fakl2-1.fna&oh=1b08515d6f00fd0c52d7c04fce14985d&oe=5D8DD309");
+        mTitle.add("Walk 40 mins");
+        mDesc.add("Walk 40 mins");
+
+        mImageUrl.add("https://scontent.fakl2-1.fna.fbcdn.net/v/t1.15752-9/64468558_410298139698482_7448380701889527808_n.png?_nc_cat=110&_nc_ht=scontent.fakl2-1.fna&oh=1b08515d6f00fd0c52d7c04fce14985d&oe=5D8DD309");
+        mTitle.add("Walk 40 mins");
+        mDesc.add("Walk 40 mins");
+
+        mImageUrl.add("https://scontent.fakl2-1.fna.fbcdn.net/v/t1.15752-9/64468558_410298139698482_7448380701889527808_n.png?_nc_cat=110&_nc_ht=scontent.fakl2-1.fna&oh=1b08515d6f00fd0c52d7c04fce14985d&oe=5D8DD309");
+        mTitle.add("Walk 40 mins");
+        mDesc.add("Walk 40 mins");
+
+        mImageUrl.add("https://scontent.fakl2-1.fna.fbcdn.net/v/t1.15752-9/64468558_410298139698482_7448380701889527808_n.png?_nc_cat=110&_nc_ht=scontent.fakl2-1.fna&oh=1b08515d6f00fd0c52d7c04fce14985d&oe=5D8DD309");
+        mTitle.add("Walk 40 mins");
+        mDesc.add("Walk 40 mins");
+
+        mImageUrl.add("https://scontent.fakl2-1.fna.fbcdn.net/v/t1.15752-9/64468558_410298139698482_7448380701889527808_n.png?_nc_cat=110&_nc_ht=scontent.fakl2-1.fna&oh=1b08515d6f00fd0c52d7c04fce14985d&oe=5D8DD309");
+        mTitle.add("Walk 40 mins");
+        mDesc.add("Walk 40 mins");
+
+        intiRecyclerView();
+    }
+
+    private void intiRecyclerView(){
+        Log.d(TAG, "intiRecyclerView: inti Recycler View");
+        RecyclerView recyclerView = findViewById(R.id.recyclerv_view);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(mTitle, mDesc, mImageUrl, this);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent we = new Intent(this, ResultActivity.class);
+        startActivity(we);
+        finish();
     }
 }
