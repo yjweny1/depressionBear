@@ -28,6 +28,8 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     // google firebase
     implementation 'com.google.firebase:firebase-core:16.0.8'
+    // google firestore
+    implementation 'com.google.firebase:firebase-firestore:19.0.2'
     // recyclerview
     implementation 'com.android.support:recyclerview-v7:28.0.0'
 

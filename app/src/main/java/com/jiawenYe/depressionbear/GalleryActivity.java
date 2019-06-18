@@ -9,9 +9,10 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
+
 public class GalleryActivity extends AppCompatActivity {
     private static final String TAG = "GalleryActivity";
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +30,7 @@ public class GalleryActivity extends AppCompatActivity {
             String imageUrl = getIntent().getStringExtra("image_url");
             String imageTitle = getIntent().getStringExtra("image_title");
             String imageDesc = getIntent().getStringExtra("image_desc");
-
+            Boolean imageShow = getIntent().getBooleanExtra("showlist", true);
             setImage(imageTitle, imageUrl, imageDesc);
         }
     }
