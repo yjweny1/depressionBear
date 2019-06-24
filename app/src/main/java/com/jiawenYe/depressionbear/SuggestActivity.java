@@ -26,6 +26,7 @@ public class SuggestActivity extends AppCompatActivity {
     private ArrayList<String> mTitle = new ArrayList<>() ;
     private ArrayList<String> mDesc = new ArrayList<>() ;
     private ArrayList<String> mImageUrl = new ArrayList<>() ;
+    private ArrayList<String> mVideoUrl = new ArrayList<>() ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,22 +44,23 @@ public class SuggestActivity extends AppCompatActivity {
         if (showlist.get(0).equals("1")){
             mImageUrl.add("https://scontent.fakl2-1.fna.fbcdn.net/v/t1.15752-9/64468558_410298139698482_7448380701889527808_n.png?_nc_cat=110&_nc_ht=scontent.fakl2-1.fna&oh=1b08515d6f00fd0c52d7c04fce14985d&oe=5D8DD309");
             mTitle.add("Walk 40 mins");
-            mDesc.add("Walk 40 mins");
+            mDesc.add("Walk 40 mins per day");
+            mVideoUrl.add("android.resource://" + getPackageName() + "/" + R.raw.walking);
         }
 
         if (showlist.get(1).equals("1")){
         mImageUrl.add("https://scontent.fakl2-1.fna.fbcdn.net/v/t1.15752-9/64468558_410298139698482_7448380701889527808_n.png?_nc_cat=110&_nc_ht=scontent.fakl2-1.fna&oh=1b08515d6f00fd0c52d7c04fce14985d&oe=5D8DD309");
-        mTitle.add("Walk 40 mins");
-        mDesc.add("Walk 40 mins");
+        mTitle.add("Listen music");
+        mDesc.add("Walk 40 mins per day");
         }
         if (showlist.get(2).equals("1")) {
-            mImageUrl.add("https://scontent.fakl2-1.fna.fbcdn.net/v/t1.15752-9/64468558_410298139698482_7448380701889527808_n.png?_nc_cat=110&_nc_ht=scontent.fakl2-1.fna&oh=1b08515d6f00fd0c52d7c04fce14985d&oe=5D8DD309");
-            mTitle.add("Walk 40 mins");
+            mImageUrl.add("https://scontent.fhlz1-1.fna.fbcdn.net/v/t1.15752-9/64568461_1343446232470138_8739392053672148992_n.png?_nc_cat=110&_nc_ht=scontent.fhlz1-1.fna&oh=79c4c2d1ca496b3e36cdc16cdc31a187&oe=5D915DEB");
+            mTitle.add("Sleep early");
             mDesc.add("Walk 40 mins");
         }
         if (showlist.get(3).equals("1")) {
-            mImageUrl.add("https://scontent.fakl2-1.fna.fbcdn.net/v/t1.15752-9/64468558_410298139698482_7448380701889527808_n.png?_nc_cat=110&_nc_ht=scontent.fakl2-1.fna&oh=1b08515d6f00fd0c52d7c04fce14985d&oe=5D8DD309");
-            mTitle.add("Walk 40 mins");
+            mImageUrl.add("https://scontent.fhlz1-1.fna.fbcdn.net/v/t1.15752-9/64568461_1343446232470138_8739392053672148992_n.png?_nc_cat=110&_nc_ht=scontent.fhlz1-1.fna&oh=79c4c2d1ca496b3e36cdc16cdc31a187&oe=5D915DEB");
+            mTitle.add("Read books");
             mDesc.add("Walk 40 mins");
         }
 
@@ -90,7 +92,7 @@ public class SuggestActivity extends AppCompatActivity {
     private void intiRecyclerView(){
         Log.d(TAG, "intiRecyclerView: inti Recycler View");
         RecyclerView recyclerView = findViewById(R.id.recyclerv_view);
-        RecyclerViewAdapter adapter = new RecyclerViewAdapter(mTitle, mDesc, mImageUrl, this);
+        RecyclerViewAdapter adapter = new RecyclerViewAdapter(mTitle, mDesc, mImageUrl, mVideoUrl,this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }

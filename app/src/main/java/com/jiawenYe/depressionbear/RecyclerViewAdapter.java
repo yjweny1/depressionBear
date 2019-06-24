@@ -24,12 +24,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     private ArrayList<String> mTitle;
     private ArrayList<String> mDesc;
     private ArrayList<String> mImage;
+    private ArrayList<String> mVideo;
     private Context mContext;
 
-    public RecyclerViewAdapter(ArrayList<String> mTitle, ArrayList<String> mDesc, ArrayList<String> mImage, Context mContext) {
+    public RecyclerViewAdapter(ArrayList<String> mTitle, ArrayList<String> mDesc, ArrayList<String> mImage, ArrayList<String> mVideo, Context mContext) {
         this.mTitle = mTitle;
         this.mDesc = mDesc;
         this.mImage = mImage;
+        this.mVideo = mVideo;
         this.mContext = mContext;
     }
 
@@ -60,6 +62,7 @@ viewHolder.parentLayout.setOnClickListener(new View.OnClickListener() {
         intent.putExtra("image_url", mImage.get(i));
         intent.putExtra("image_title", mTitle.get(i));
         intent.putExtra("image_desc", mDesc.get(i));
+        intent.putExtra("video", mVideo.get(i));
         mContext.startActivity(intent);
     }
 });
