@@ -1,5 +1,6 @@
 package com.jiawenYe.depressionbear;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -53,5 +54,12 @@ public class GalleryActivity extends AppCompatActivity {
         gimage.setMediaController(mc);
         gimage.start();
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent we = new Intent(this, ResultActivity.class);
+        startActivity(we);
+        finish();
     }
 }

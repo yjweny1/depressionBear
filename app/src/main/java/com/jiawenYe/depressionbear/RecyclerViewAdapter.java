@@ -17,7 +17,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>{
+public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     private static final String TAG = "RecyclerViewAdapter";
 
@@ -38,7 +38,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.layout_listitem, viewGroup,false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.layout_listitem, viewGroup, false);
         ViewHolder holder = new ViewHolder(view);
         return holder;
     }
@@ -53,19 +53,19 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
         viewHolder.title.setText(mTitle.get(i));
         viewHolder.desc.setText(mDesc.get(i));
-viewHolder.parentLayout.setOnClickListener(new View.OnClickListener() {
-    @Override
-    public void onClick(View v) {
-        Log.d(TAG, "onClick: clicked on: " + mTitle.get(i));
-        Toast.makeText(mContext, mTitle.get(i), Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(mContext, GalleryActivity.class);
-        intent.putExtra("image_url", mImage.get(i));
-        intent.putExtra("image_title", mTitle.get(i));
-        intent.putExtra("image_desc", mDesc.get(i));
-        intent.putExtra("video", mVideo.get(i));
-        mContext.startActivity(intent);
-    }
-});
+        viewHolder.parentLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "onClick: clicked on: " + mTitle.get(i));
+                Toast.makeText(mContext, mTitle.get(i), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(mContext, GalleryActivity.class);
+                intent.putExtra("image_url", mImage.get(i));
+                intent.putExtra("image_title", mTitle.get(i));
+                intent.putExtra("image_desc", mDesc.get(i));
+                intent.putExtra("video", mVideo.get(i));
+                mContext.startActivity(intent);
+            }
+        });
 
     }
 
@@ -74,7 +74,7 @@ viewHolder.parentLayout.setOnClickListener(new View.OnClickListener() {
         return mTitle.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView image;
         TextView title;
         TextView desc;

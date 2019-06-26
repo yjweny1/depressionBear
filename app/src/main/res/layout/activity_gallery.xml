@@ -40,7 +40,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="5"
+        android:layout_weight="60"
         android:id="@+id/sg_desc"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
